@@ -1,1 +1,0 @@
-# qual-e-a-conta
