@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual é a conta? - Raciocínio Matemático</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <div id="home-screen" class="screen active">
+        <div class="container">
+            <div class="hero-section">
+                <div class="logo-container">
+                    <div class="logo">
+                        <span class="logo-icon">🧮</span>
+                        <h1 class="logo-text">Qual é a conta?</h1>
+                    </div>
+                    <p class="subtitle">Desenvolva seu raciocínio matemático de forma divertida!</p>
+                </div>
+                
+                <div class="menu-buttons">
+                    <button id="play-btn" class="menu-btn primary">
+                        <span class="btn-icon">🎮</span>
+                        <span class="btn-text">Jogar</span>
+                    </button>
+                    <button id="instructions-btn" class="menu-btn secondary">
+                        <span class="btn-icon">📖</span>
+                        <span class="btn-text">Instruções</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Instruções -->
+    <div id="instructions-screen" class="screen">
+        <div class="container">
+            <div class="instructions-content">
+                <h2>📋 Como Jogar</h2>
+                <div class="instructions-grid">
+                    <div class="instruction-card">
+                        <div class="instruction-icon">🎯</div>
+                        <h3>Objetivo</h3>
+                        <p>Use as cartas disponíveis com as 4 operações básicas (+, -, ×, ÷) para formar o número alvo mostrado pelos dados.</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">🃏</div>
+                        <h3>Cartas</h3>
+                        <p>Você pode usar quantas cartas quiser das 5 disponíveis. Para cada carta utilizada, você ganha 1 ponto!</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">➕</div>
+                        <h3>Operações</h3>
+                        <p>Use +, -, *, / e parênteses para criar sua expressão matemática.</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">🆕</div>
+                        <h3>Nova Carta</h3>
+                        <p>Se não conseguir formar o número, clique em "Nova Carta" para adicionar mais uma opção!</p>
+                    </div>
+                    <div class="instruction-card">
+                        <div class="instruction-icon">⚡</div>
+                        <h3>Modo Avançado</h3>
+                        <p>No modo avançado, você deve usar TODAS as cartas para pontuar. Desafio máximo!</p>
+                    </div>
+                </div>
+                
+                <div class="difficulty-info">
+                    <h3>🎚️ Níveis de Dificuldade</h3>
+                    <div class="difficulty-levels">
+                        <div class="level easy">
+                            <span class="level-icon">🟢</span>
+                            <div>
+                                <strong>Fácil</strong>
+                                <p>Cartas de 1 a 15, números alvo até 50</p>
+                            </div>
+                        </div>
+                        <div class="level normal">
+                            <span class="level-icon">🟡</span>
+                            <div>
+                                <strong>Normal</strong>
+                                <p>Cartas de 1 a 20, números alvo até 99</p>
+                            </div>
+                        </div>
+                        <div class="level hard">
+                            <span class="level-icon">🔴</span>
+                            <div>
+                                <strong>Difícil</strong>
+                                <p>Cartas de 1 a 20, números alvo até 299 (3 dados)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="back-to-home" class="back-btn">
+                    <span>← Voltar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Seleção de Modos -->
+    <div id="game-modes-screen" class="screen">
+        <div class="container">
+            <div class="modes-section">
+                <h2>🎮 Escolha o Modo de Jogo</h2>
+                <div class="modes-grid">
+                    <div class="mode-card" data-mode="treino">
+                        <div class="mode-icon">🎯</div>
+                        <h3>Treino</h3>
+                        <p>Pratique sem pressão! Jogue no seu ritmo e aprenda as mecânicas do jogo.</p>
+                        <ul>
+                            <li>Sem limite de tempo</li>
+                            <li>Sem sistema de vidas</li>
+                            <li>Foco no aprendizado</li>
+                        </ul>
+                        <button class="mode-btn">Selecionar</button>
+                    </div>
+                    
+                    <div class="mode-card" data-mode="arcade">
+                        <div class="mode-icon">🏆</div>
+                        <h3>Arcade</h3>
+                        <p>Desafie-se com pontuação e vidas limitadas! Cada erro conta.</p>
+                        <ul>
+                            <li>Sistema de pontuação</li>
+                            <li>3 vidas disponíveis</li>
+                            <li>Escolha a dificuldade</li>
+                        </ul>
+                        <button class="mode-btn">Selecionar</button>
+                    </div>
+                    
+                    <div class="mode-card" data-mode="timer">
+                        <div class="mode-icon">⏱️</div>
+                        <h3>Timer</h3>
+                        <p>Corrida contra o tempo! Faça o máximo de pontos em 3 minutos.</p>
+                        <ul>
+                            <li>3 minutos de duração</li>
+                            <li>Sistema de pontuação</li>
+                            <li>Desafio de velocidade</li>
+                        </ul>
+                        <button class="mode-btn">Selecionar</button>
+                    </div>
+                </div>
+                
+                <button id="back-to-home-from-modes" class="back-btn">← Voltar ao Início</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Seleção de Dificuldade -->
+    <div id="difficulty-screen" class="screen">
+        <div class="container">
+            <div class="difficulty-selection">
+                <h2>🎚️ Escolha a Dificuldade</h2>
+                <div class="difficulty-cards">
+                    <div class="difficulty-card easy" data-difficulty="easy">
+                        <div class="card-header">
+                            <span class="difficulty-icon">🟢</span>
+                            <h3>Fácil</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li>Cartas de 1 a 15</li>
+                                <li>Números alvo até 50</li>
+                                <li>Ideal para iniciantes</li>
+                            </ul>
+                        </div>
+                        <button class="select-difficulty-btn">Selecionar</button>
+                    </div>
+                    
+                    <div class="difficulty-card normal" data-difficulty="normal">
+                        <div class="card-header">
+                            <span class="difficulty-icon">🟡</span>
+                            <h3>Normal</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li>Cartas de 1 a 20</li>
+                                <li>Números alvo até 99</li>
+                                <li>Desafio equilibrado</li>
+                            </ul>
+                        </div>
+                        <button class="select-difficulty-btn">Selecionar</button>
+                    </div>
+                    
+                    <div class="difficulty-card hard" data-difficulty="hard">
+                        <div class="card-header">
+                            <span class="difficulty-icon">🔴</span>
+                            <h3>Difícil</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li>Cartas de 1 a 20</li>
+                                <li>Números alvo até 299 (3 dados)</li>
+                                <li>Para especialistas</li>
+                            </ul>
+                        </div>
+                        <button class="select-difficulty-btn">Selecionar</button>
+                    </div>
+                </div>
+                
+                <button id="back-to-home-from-difficulty" class="back-btn">
+                    <span>← Voltar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Game Over -->
+    <div id="game-over-screen" class="screen">
+        <div class="container">
+            <div class="game-over-section">
+                <div class="game-over-icon">💀</div>
+                <h2>Game Over!</h2>
+                <div class="final-score">
+                    <h3>Pontuação Final</h3>
+                    <div class="score-display" id="final-score">0</div>
+                    <div class="score-details" id="score-details"></div>
+                </div>
+                <div class="game-over-buttons">
+                    <button id="new-game-btn-over" class="game-over-btn primary">
+                        🎮 Nova Partida
+                    </button>
+                    <button id="back-to-home-over" class="game-over-btn secondary">
+                        🏠 Início
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela do Jogo -->
+    <div id="game-screen" class="screen">
+        <div class="container">
+            <!-- Barra superior compacta -->
+            <div class="game-header-compact">
+                <div class="header-left">
+                    <span class="game-title">🧮 Qual é a conta?</span>
+                    <span class="difficulty-badge" id="current-difficulty">Normal</span>
+                </div>
+                <div class="header-center">
+                    <div class="game-stats">
+                        <div class="stat-item" id="score-display" style="display: none;">
+                            <span class="stat-label">Pontos:</span>
+                            <span class="stat-value" id="current-score">0</span>
+                        </div>
+                        <div class="stat-item" id="lives-display" style="display: none;">
+                            <span class="stat-label">Vidas:</span>
+                            <span class="stat-value" id="current-lives">3</span>
+                        </div>
+                        <div class="stat-item" id="timer-display" style="display: none;">
+                            <span class="stat-label">Tempo:</span>
+                            <span class="stat-value" id="current-timer">3:00</span>
+                        </div>
+                        <div class="advanced-mode-toggle" id="advanced-toggle" style="display: none;">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="advanced-mode-toggle">
+                                <span class="toggle-slider"></span>
+                                <span class="toggle-text">Modo Avançado</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button id="back-to-modes" class="back-btn-compact">← Voltar</button>
+                </div>
+            </div>
+
+            <div class="game-area">
+                <div class="target-section">
+                    <h3>🎯 Número Alvo</h3>
+                    <div class="dice-container">
+                        <div class="dice" id="dice1">
+                            <span id="dice1-value">?</span>
+                        </div>
+                        <div class="dice" id="dice2">
+                            <span id="dice2-value">?</span>
+                        </div>
+                        <div class="dice" id="dice3" style="display: none;">
+                            <span id="dice3-value">?</span>
+                        </div>
+                    </div>
+                    <div class="target-number">
+                        <span id="target-display">--</span>
+                    </div>
+                </div>
+
+                <div class="cards-section">
+                    <div class="cards-header">
+                        <h3>🃏 Cartas Disponíveis</h3>
+                        <button id="add-card-btn" class="add-card-btn">
+                            <span>+ Nova Carta</span>
+                        </button>
+                    </div>
+                    <div class="cards-container" id="cards-container">
+                        <!-- Cartas serão geradas dinamicamente -->
+                    </div>
+                </div>
+
+                <div class="expression-builder">
+                    <h3>✏️ Monte sua Expressão</h3>
+                    <div class="expression-area">
+                        <span class="expression-hint">Clique nas cartas e use as operações</span>
+                        <div class="expression-display" id="expression-display"></div>
+                    </div>
+                    <div class="operation-buttons">
+                        <button class="op-btn" data-op="+">+</button>
+                        <button class="op-btn" data-op="-">-</button>
+                        <button class="op-btn" data-op="×">×</button>
+                        <button class="op-btn" data-op="÷">÷</button>
+                        <button class="op-btn" data-op="(">(</button>
+                        <button class="op-btn" data-op=")">)</button>
+                    </div>
+                    <div class="expression-controls">
+                        <button id="check-expression-btn" class="control-btn primary">Verificar</button>
+                        <button id="clear-expression-btn" class="control-btn secondary">Limpar</button>
+                        <button id="new-round-btn" class="control-btn secondary" style="display: none;">Nova Rodada</button>
+                    </div>
+                    <div class="result-display" id="result-display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
